@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "tf_remote_state" {
-  bucket = "ken-dabrowski-static-aws-site-terraform-state-backend"
+  bucket = "kenneth-dabrowski-static-aws-site-terraform-state-backend"
   lifecycle {
     prevent_destroy = true
   }
@@ -28,7 +28,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "tf_remote_state" 
 
 resource "aws_dynamodb_table" "tf_remote_state_locking" {
   hash_key = "LockID"
-  name     = "ken-dabrowski-aws-site-terraform-state-locking"
+  name     = "kenneth-dabrowski-static-aws-site-terraform-state-locking"
   attribute {
     name = "LockID"
     type = "S"
