@@ -64,13 +64,13 @@ resource "aws_s3_bucket_object" "image_file_upload" {
   bucket = "www.${var.bucket_name}"
   key    = "ken_dabrowski_2022.jpg"
   source = "${path.module}/files/ken_dabrowski_2022.jpg"
-  etag   = "${filemd5("${path.module}/files/ken_dabrowski_2022.jpg")}"
+  etag   = filemd5("${path.module}/files/ken_dabrowski_2022.jpg")
 }
 
 resource "aws_s3_bucket_object" "index_file_upload" {
-  bucket = "www.${var.bucket_name}"
-  key    = "index.html"
-  source = "${path.module}/files/index.html"
-  etag   = "${filemd5("${path.module}/files/index.html")}"
+  bucket       = "www.${var.bucket_name}"
+  key          = "index.html"
+  source       = "${path.module}/files/index.html"
+  etag         = filemd5("${path.module}/files/index.html")
   content_type = "text/html"
 }
