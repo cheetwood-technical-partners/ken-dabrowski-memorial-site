@@ -60,17 +60,17 @@ resource "aws_s3_bucket_website_configuration" "root_bucket_website_configuratio
   }
 }
 
-#resource "aws_s3_bucket_object" "mp4_file_upload" {
-#  bucket = var.bucket_name
-#  key    = "Garrison.Main.mp4"
-#  source = "${path.module}/files/Garrison.Main.mp4"
-#  etag   = "${filemd5("${path.module}/files/Garrison.Main.mp4")}"
-#}
-#
-#resource "aws_s3_bucket_object" "index_file_upload" {
-#  bucket = var.bucket_name
-#  key    = "index.html"
-#  source = "${path.module}/files/index.html"
-#  etag   = "${filemd5("${path.module}/files/index.html")}"
-#  content_type = "text/html"
-#}
+resource "aws_s3_bucket_object" "mp4_file_upload" {
+  bucket = var.bucket_name
+  key    = "Garrison.Main.mp4"
+  source = "${path.module}/files/Garrison.Main.mp4"
+  etag   = "${filemd5("${path.module}/files/ken_dabrowski_2022.jpg")}"
+}
+
+resource "aws_s3_bucket_object" "index_file_upload" {
+  bucket = var.bucket_name
+  key    = "index.html"
+  source = "${path.module}/files/index.html"
+  etag   = "${filemd5("${path.module}/files/index.html")}"
+  content_type = "text/html"
+}
